@@ -1,0 +1,1 @@
+depth = room_height - (y + sprite_height - sprite_yoffset);
