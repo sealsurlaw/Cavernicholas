@@ -4,22 +4,24 @@ var _prev_x = x;
 var _prev_y = y;
 var _prev_image = image_index;
 
+var _speed_major = 6;
+var _speed_minor = 2;
 if global.can_move == true {
 	if is_left_held() {
-		y -= 1;
-		x -= 4;
+		y -= _speed_minor;
+		x -= _speed_major;
 		image_index = 2
 	} else if is_right_held() {
-		y += 1;
-		x += 4;
+		y += _speed_minor;
+		x += _speed_major;
 		image_index = 0;
 	} else if is_up_held() {
-		y -= 4;
-		x += 1;
+		y -= _speed_major;
+		x += _speed_minor;
 		image_index = 3
 	} else if is_down_held() {
-		y += 4;
-		x -= 1;
+		y += _speed_major;
+		x -= _speed_minor;
 		image_index = 1;
 	}
 

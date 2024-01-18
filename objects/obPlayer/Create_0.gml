@@ -30,3 +30,6 @@ function is_outside() {
 		   y - sprite_yoffset < 0 ||
 		   y - sprite_yoffset + sprite_height > room_height;
 }
+
+layer_create(-1000, "hud");
+instance_create_layer(0, 0, "hud", obHeartHud);
