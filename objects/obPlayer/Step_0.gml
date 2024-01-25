@@ -34,9 +34,12 @@ if global.can_move == true {
 	spin_ = 0;
 }
 
-if global.is_hurt == false && place_meeting(x, y, iHurtable) == true {
+if global.is_hurt == false &&
+   place_meeting(x, y, iHurtable) == true &&
+   place_meeting(x, y, obHurtBackTo) == false {
 	global.is_hurt = true;
 	global.can_move = false;
+	audio_play_sound(sdOw, 1, false);
 }
 
 if global.is_hurt == true {
@@ -46,7 +49,8 @@ if global.is_hurt == true {
 	depth = -100;
 }
 
-if place_meeting(x, y, obHurtBackTo) == true {
+if global.is_hurt == true &&
+   place_meeting(x, y, obHurtBackTo) == true {
 	global.is_hurt = false;
 	global.can_move = true;
 	image_index = 0;

@@ -1,11 +1,12 @@
 event_inherited();
 
-if global.can_move && place_meeting(x, y, obPlayer) == true {
-	global.hearts[heartIndex_] = 1;
-}
-
 if global.hearts[heartIndex_] > 0 {
 	instance_destroy();	
+}
+
+if global.can_move && place_meeting(x, y, obPlayer) == true {
+	global.hearts[heartIndex_] = 1;
+	audio_play_sound(sdBeep, 10, false);
 }
 
 if dim_ == true {

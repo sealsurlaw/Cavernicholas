@@ -1,6 +1,6 @@
 event_inherited();
 
-if place_meeting(x, y, obPlayer) == true {
+if global.can_move && place_meeting(x, y, obPlayer) == true {
 	global.last_room = room;
 	
 	// Left
